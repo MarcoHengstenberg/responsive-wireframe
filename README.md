@@ -6,7 +6,7 @@ Now, this is not weird but *Wired* and my personal responsive sandbox to play wi
 
 The idea for this came up after reading about how much online-shops around the world lack support for mobile devices or are static in their design. Current shop-systems like Magento, Oxid or Shopware come with a lot of restrictions and therefore developers are simply tossing the table ╯°□°）╯┻━┻ when it comes to make a shop really responsive. As I am not the type of guy to refrain from a real challenge... well, here we go.
 
-### First things First
+## First things First
 
 **Table of Contents:**
 
@@ -15,7 +15,7 @@ The idea for this came up after reading about how much online-shops around the w
 - [Credits](#credits)
 - [License](#license)
 
-### Development Tools
+## Development Tools
 
 I'm using *[Grunt](http://gruntjs.com)* with the following tasks:
 
@@ -28,14 +28,16 @@ I'm using *[Grunt](http://gruntjs.com)* with the following tasks:
 - [imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
 - [watch](https://github.com/gruntjs/grunt-contrib-watch)
 
-### LESStoCSS
+## LESStoCSS
 
 The way I structure my LESS files to create beautiful CSS is well documented in the files themselves. So, if you are really interested dive into the LESS-directory, open a file and read what's there ot know what's going on where and why.
 
-### Credits
+## Credits
 
 This work of mine wouldn't be possible without a few people around the globe, who helped me becoming the person/developer I am today. Apart from my family and friends those people are nerdy, geeky, techy web developers, engineers or designers and I love them to bits for their work, enthusiasm and other good things like inspiration and foremost their help.
 
-### License
+## License
 
 Licensed under the terms of the WTFPL (Do What the Fuck You Want to Public License).
+
+You may want to take look into this [license file](https://github.com/MarcoKunz/responsive-wireframe/blob/master/LICENSE.md).
