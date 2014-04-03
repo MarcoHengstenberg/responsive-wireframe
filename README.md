@@ -4,7 +4,7 @@ Being a kid, did you love to play in the sand building castles and all? I did no
 
 Now, this is not weird but *Wired* and my personal responsive sandbox to play with built as a wireframe for a shop. I feel quite merry as I start the project right now. Let's see where I end up with this.
 
-The idea for this came up after reading about how much online-shops around the world lack support for mobile devices or are static in their design. Current shop-systems like Magento, Oxid or Shopware come with a lot of restrictions and therefore developers are simply tossing the table ** ╯°□°）╯┻━┻ ** when it comes to make a shop really responsive. As I am not the type of guy to refrain from a real challenge... well, here we go.
+The idea for this came up after reading about how much online-shops around the world lack support for mobile devices or are static in their design. Current shop-systems like Magento, Oxid or Shopware come with a lot of restrictions and therefore developers are simply tossing the table ╯°□°）╯┻━┻ when it comes to make a shop really responsive. As I am not the type of guy to refrain from a real challenge... well, here we go.
 
 ### First things First
 
