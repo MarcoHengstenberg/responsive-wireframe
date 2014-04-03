@@ -71,6 +71,12 @@ a[href="#cart"] {
 
 	background: url(../images/svg/cart.svg) no-repeat 50% 50%, @link;
 	background-size: 61.8%;
+
+	transition: all ease .3s;
+
+	&:active {
+		background-position: 200% 50%;
+	}
 }
 
 a[href="#user-nav"] {
@@ -84,29 +90,30 @@ a[href="#user-nav"] {
 
 	text-align: center;
 
-	display: none;
   position: absolute;
-  top: 0;
+  top: -100em;
   
-  width: 100%;
   height: 0;
   padding: 0;
 
-  transition: all ease .3s;
+  transition: top ease .3s;
 
   li {
-  	width: 50%;
-  	float: left;
-
-  	margin: @one 0;
+  	font-size: @one * 2;
+  	margin: @double 0 @gold;
   }
 
   .closing {
-  	float: right;
+  	font-size: @one;
+
+  	position: absolute;
+  	top: 0;
+  	right: @one;
 
   	width: @double;
   	height: @double;
-  	margin: @gold 0 0;
+
+  	margin-top: @one + @one / 4;
 
   	a {
   		background: url(../images/svg/x-icon.svg) no-repeat 50% 50%, @link;
@@ -116,21 +123,23 @@ a[href="#user-nav"] {
 }
 
 .user-nav:target {
-	display: block;
-	position: relative;
+	top: 0;
 
   height: 100%;
-  padding: @gold 0;
+  overflow-y: scroll;
+  width: 100%;
+  padding: @one + @one / 4 0 @gold;
   margin-bottom: @one;
 
-  border-top: .08em solid rgba(0,0,0,.05);
-  border-bottom: .08em solid rgba(0,0,0,.05);
+  background-color: @bg;
 }
 
 // Switching the nav lis on the state of the user
 .logged-in .logged-in,
 .logged-out .logged-out {
 	display: block;
+	width: 50%;
+	float: left;
 }
 
 .logged-in .logged-out,
@@ -138,22 +147,30 @@ a[href="#user-nav"] {
 	display: none;
 }
 
+// Form Headlines
+form h3 {
+	font-size: 1.5em;
+
+	color: @corpred;
+
+	margin-bottom: @half;
+}
 
 // A search is crucial to a proper shop experience
 .search {
-	margin: @gold 0 @double;
+	margin: @gold 0;
 
 	.long {
 		display: none;
 
-		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%, @link;
+		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%;
 		background-size: contain;
 	}
 
 	.short {
 		display: block;
 
-		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%, @link;
+		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%;
 		background-size: contain;
 	}
 
@@ -195,6 +212,19 @@ input[type="search"] {
   height: 100%;
   padding: @gold 0;
   margin: @double 0;
+
+  border-bottom: .08em solid rgba(0,0,0,0.25);
+
+  .closing {
+  	position: absolute;
+  	top: 1.25em;
+  	right: 0;
+
+  	a {
+  		background: url(../images/svg/x-icon.svg) no-repeat 50% 50%, @link;
+  		background-size: 61.8%;
+  	}
+  }
 }
 
 .signup input,
@@ -204,4 +234,80 @@ input[type="search"] {
 	width: 100%;
 
 	border-radius: 0;
+}
+
+// A greeting sentence or motto or slogan
+header {
+	margin-top: @gold;
+
+	p {
+		font-size: 1.125em;
+		line-height: 1.3;
+
+		margin-bottom: @one;
+
+		a {
+			font-size: 2.25em;
+			letter-spacing: -.02em;
+
+			border: 0;
+			color: @corpred + #333;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: @corpred + #666;
+			}
+		}
+	}
+}
+
+// Breadcrumb Navigation – we have that too
+.breadcrumb {
+	margin-bottom: @gold;
+
+	li {
+		float: left;
+
+		&:after {
+			content: "\00A0 \0020 > \0020 \00A0";
+		}
+
+		&:last-child:after {
+			content: " ";
+		}
+	}
+}
+
+// Categories Navigation
+.categories-nav h2 {
+	box-sizing: border-box;
+
+	font-size: 2.5em;
+	padding: @half / 3;
+
+	border: .04em solid @font;
+
+	transition: border-color ease .3s;
+
+	&:hover,
+	&:focus,
+	&:active {
+		cursor: pointer;
+		border-color: @link;
+	}
+
+	&:after {
+		position: relative;
+		top: .8em;
+
+		content: "\0020";
+		width: 0;
+		height: 0;
+		margin-left: @one;
+
+		border-left: @half / 2 solid transparent;
+		border-right: @half / 2 solid transparent;
+		border-top: @half / 2 solid @font;
+	}
 }

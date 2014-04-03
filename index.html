@@ -43,7 +43,7 @@
   <![endif]-->
 
 </head>
-<body class="logged-in" id="top"> <!-- Should dynamically change to logged-out when someone's not logged in -->
+<body class="logged-out" id="top"> <!-- Should dynamically change to logged-in when someone's logged in -->
 
 	<h1 class="logo"><a href="#">Wired</a></h1>
 
@@ -59,50 +59,50 @@
 		<ul class="user-nav clearfix" id="user-nav">
 			<li class="logged-in"><a href="#">Your Profile</a></li>
 			<li class="logged-in"><a href="#">Logout</a></li>
-			<li class="logged-out"><a href="#login-form">Login</a></li>
 			<li class="logged-out"><a href="#signup-form">Sign Up</a></li>
+			<li class="logged-out"><a href="#login-form">Login</a></li>
 			<li><a href="#">Help</a></li>
 			<li class="closing"><a class="hide-text" href="#top">Close</a></li>
 		</ul>
 
 	</nav>
 
+	<form class="signup clearfix" id="signup-form">
+		<h3>Create an account</h3>
+		<input class="text-input" type="email" placeholder="Your email" required />
+		<input class="text-input" type="password" placeholder="Your password" required name="pw" id="pw" />
+		<input class="text-input" type="password" placeholder="Confirm your password" required name="pw2" id="pw2" oninput="check(this)" />
+		<button type="submit">Login</button>
+		<script>function check(input) { if (input.value != document.getElementById('pw').value) { input.setCustomValidity('The two passwords must match.'); } else { // input is valid -- reset the error message
+			input.setCustomValidity('');}}</script>
+		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
+	</form>
+
+	<form class="login clearfix" id="login-form">
+		<h3>Login</h3>
+		<input class="text-input" type="email" placeholder="Your email" required />
+		<input class="text-input" type="password" placeholder="Your password" required />
+		<button type="submit">Submit</button>
+		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
+	</form>
+
+	<header role="banner">
+
+		<p>Welcome to my wonderful shop wireframe. May your stay be a pleasant one.</p>
+
+		<p>Did you know that, <strong>today</strong>, you could <a href="#">save 5%</a><br />
+			<small>on any purchase worth more than 50€? If this were a real shop of course.</small></p>
+
+	</header>
+
 	<form class="search clearfix" id="search">
 		<input class="text-input" type="search" placeholder="Search the shop" />
 		<button type="submit"><span class="short hide-text">Go</span><span class="long">Search</span></button>
 	</form>
 
-	<form class="signup clearfix" id="signup-form">
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<input class="text-input" type="password" placeholder="Your password" required name="pw" id="pw" />
-		<input class="text-input" type="password" placeholder="Confirm password" name="pw2" id="pw2" oninput="check(this)" />
-		<button type="submit">Login</button>
-		<script>function check(input) { if (input.value != document.getElementById('pw').value) { input.setCustomValidity('The two passwords must match.'); } else { // input is valid -- reset the error message
-			input.setCustomValidity('');}}</script>
-	</form>
-
-	<form class="login clearfix" id="login-form">
-		<input class="text-input" type="text" placeholder="Your name" required />
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<button type="submit">Submit</button>
-	</form>
-
-	<header role="banner">
-
-		<ul>
-			<li>Or some</li>
-			<li>other stuff</li>
-			<li>you may need</li>
-			<li>in your header.</li>
-		</ul>
-
-		<p>A neat sentence on top of everything. Motto? Slogan?</p>
-
-	</header>
-
 	<main role="main">
 
-		<nav class="breadcrumb">
+		<nav class="breadcrumb clearfix">
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Child</a></li>
@@ -113,8 +113,10 @@
 		<section class="content">
 
 			<nav class="categories-nav">
-				<h2>Categories</h2>
-				<ul>
+				
+				<h2><a href="#categories"></a>Categories</h2>
+
+				<ul id="categories">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Filter One</a></li>
 					<li><a href="#">Filter Two</a></li>

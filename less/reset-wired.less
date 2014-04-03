@@ -36,6 +36,8 @@ html {
 }
 
 body {
+  overflow-x: hidden;
+
   color: @font;
   background-color: @bg;
 
@@ -267,8 +269,20 @@ input[type="text"] {
   height: @double;
   padding-left: @half;
 
-  border: .08em solid @font + #666;
+  border: .08em solid @font + #888;
   border-radius: @half / 2 0 0 @half / 2;
+
+  transition: border-color ease .3s;
+
+  &:focus,
+  &:active {
+    border-color: @font + #555;
+  }
+}
+
+.signup input[type="email"]:valid,
+.signup input[type="password"]:valid {
+  box-shadow: 0 0 .08em #6ECE0A; // green means you're good to go
 }
 
 button[type="submit"] {
@@ -278,6 +292,12 @@ button[type="submit"] {
   height: @double;
 
   border: .08em solid @link - #111;
+
+  &:hover,
+  &:focus {
+    background: @link + #111;
+    text-shadow: 0 0 @one rgba(255,255,255,0.65);
+  }
 }
 
 /*
