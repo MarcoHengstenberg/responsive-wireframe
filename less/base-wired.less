@@ -1,0 +1,207 @@
+// base-wired.less
+
+// Put the logo in place
+.logo {
+	font-size: 3em;
+
+	padding: @one / 4 0;
+
+	a {
+		color: @corpred + #333;
+		text-shadow: .03em .03em 0 @link-hover;
+		border: 0;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: @corpred + #666;
+		}
+	}
+}
+
+/*
+	Toggle Buttons for the main-navigation
+	and a button to go to the cart.
+*/
+.mobile-menu-buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	/*
+		matching the upper distance of the logo
+		and the padding to the right border of the screen
+	*/
+	padding: @one + @one / 4 @one 0 0;
+}
+
+a[href="#user-nav"],
+a[href="#cart"],
+.closing a[href="#top"] {
+	box-sizing: border-box;
+
+	float: left;
+
+	color: @bg;
+	background: @link;
+
+	height: @double;
+	width: @double;
+
+	border: .08em solid @link - #111;
+	border-radius: @half / 2;
+
+	box-shadow: .125em 0 .125em rgba(0,0,0,.1);
+
+	&:hover {
+		background-color: @link + #111;
+	}
+
+	&:active {
+		background-color: @link;
+		box-shadow:
+			inset -.125em 0 .125em rgba(0,0,0,0.25),
+			inset .125em 0 .125em rgba(0,0,0,0.25);
+	}
+}
+
+a[href="#cart"] {
+	// prevent people from tapping the wrong button by accident
+	margin-right: @one;
+
+	background: url(../images/svg/cart.svg) no-repeat 50% 50%, @link;
+	background-size: 61.8%;
+}
+
+a[href="#user-nav"] {
+	background: url(../images/svg/nav-icon.svg) no-repeat 50% 50%, @link;
+	background-size: 61.8%;
+}
+
+// User Interaction Navigation (Profile Link, Logging in, out, Signing Up, Help)
+.user-nav {
+	box-sizing: border-box;
+
+	text-align: center;
+
+	display: none;
+  position: absolute;
+  top: 0;
+  
+  width: 100%;
+  height: 0;
+  padding: 0;
+
+  transition: all ease .3s;
+
+  li {
+  	width: 50%;
+  	float: left;
+
+  	margin: @one 0;
+  }
+
+  .closing {
+  	float: right;
+
+  	width: @double;
+  	height: @double;
+  	margin: @gold 0 0;
+
+  	a {
+  		background: url(../images/svg/x-icon.svg) no-repeat 50% 50%, @link;
+  		background-size: 61.8%;
+  	}
+  }
+}
+
+.user-nav:target {
+	display: block;
+	position: relative;
+
+  height: 100%;
+  padding: @gold 0;
+  margin-bottom: @one;
+
+  border-top: .08em solid rgba(0,0,0,.05);
+  border-bottom: .08em solid rgba(0,0,0,.05);
+}
+
+// Switching the nav lis on the state of the user
+.logged-in .logged-in,
+.logged-out .logged-out {
+	display: block;
+}
+
+.logged-in .logged-out,
+.logged-out .logged-in {
+	display: none;
+}
+
+
+// A search is crucial to a proper shop experience
+.search {
+	margin: @gold 0 @double;
+
+	.long {
+		display: none;
+
+		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%, @link;
+		background-size: contain;
+	}
+
+	.short {
+		display: block;
+
+		background: url(../images/svg/search-icon.svg) no-repeat 50% 50%, @link;
+		background-size: contain;
+	}
+
+	button {
+		float: left;
+		width: 30%;
+
+		border-radius: 0 @half / 2 @half / 2 0;
+	}
+}
+
+input[type="search"] {
+	width: 70%;
+	float: left;
+}
+
+/*
+	Login and Signup Forms are only needed when someone
+	wants to interact with them.
+*/
+.signup,
+.login {
+	display: none;
+  position: absolute;
+  top: 0;
+  
+  width: 100%;
+  height: 0;
+  padding: 0;
+
+  transition: all ease .3s;
+}
+
+.signup:target,
+.login:target {
+	display: block;
+	position: relative;
+
+  height: 100%;
+  padding: @gold 0;
+  margin: @double 0;
+}
+
+.signup input,
+.login input,
+.signup button,
+.login button {
+	width: 100%;
+
+	border-radius: 0;
+}

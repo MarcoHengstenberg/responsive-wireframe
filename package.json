@@ -1,0 +1,36 @@
+{
+	"name": "wired",
+	"version": "0.1.0",
+	"description": "Wired - A responsive shop wireframe by Marco Kunz",
+	
+	"author": {
+		"name": "Marco Kunz",
+		"email": "marco.kunz1982@gmail.com"
+	},
+	
+	"repository": {
+		"type": "git",
+		"url": "git@://github.com/marcokunz/responsive-wireframe.git"
+	},
+	
+	"bugs": {
+		"url": "https://github.com/marcokunz/responsive-wireframe/issues/"
+	},
+
+	"licenses": {
+		"type": "WTFPL"
+	},
+	
+	"devDependencies" : {
+		"grunt" : "~0.4.0",
+		"grunt-htmlhint": "*",
+		"grunt-contrib-less" : "*",
+		"grunt-autoprefixer" : "*",
+		"grunt-contrib-cssmin" : "*",
+		"grunt-contrib-concat" : "*",
+		"grunt-contrib-uglify" : "*",
+		"grunt-contrib-imagemin": "*",
+		"grunt-contrib-watch" : "*",
+		"matchdep" : "*"
+	}
+}

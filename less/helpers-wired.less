@@ -1,0 +1,23 @@
+// helpers-wired.less
+
+/*
+	When I want to replace text with an image I do it the Kellum way.
+	Do not forget to set a height and width on elements with that class.
+*/
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// Clearfixing... always a good thing
+.clearfix:before,
+.clearfix:after {
+  content: "\0020"; // you see nothing as this is space in Unicode
+  font: 0/0 a; // and I will make extra sure you see nothing in Opera
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}

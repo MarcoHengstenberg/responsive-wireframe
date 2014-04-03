@@ -1,0 +1,323 @@
+// reset-wired.less
+
+/*
+	A more considered reset; more of a restart...
+	Thanks to Harry Roberts (http://csswizardry.com/) for this one.
+	I shrinked it a little by leaving out unneeded elements.
+*/
+html,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,
+hr,a,abbr,address,img,
+b,i,em,small,strong,sub,sup,del,
+dl,dt,dd,ol,ul,li,
+form,label,
+table,caption,tbody,tfoot,thead,tr,th,td,
+main,article,aside,footer,header,nav,section,time{
+  margin:0;
+  padding:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+/*
+	normalize.css v3.0.0 | MIT License | git.io/normalize
+	Yeah. Same goes here. I am only using stuff that I need and kick out all the rest.
+*/
+
+/*
+	2. Prevent iOS text size adjust after orientation change
+*/
+
+html {
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  color: @font;
+  background-color: @bg;
+
+  /*
+    At some point I might add a max-width
+    to the body. Then I want it to be centered.
+  */
+  margin: 0 auto;
+
+  // Create a little space for smartphone scrollbars
+  padding: 0 @one;
+}
+
+/*
+	HTML5 display definitions
+	Correct `block` display not defined in IE 8/9.
+*/
+
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section{
+  display: block;
+}
+
+/*
+  Lists need bullets or numbers but not when they
+  represent a navigation.
+*/
+nav ul {
+  list-style-type: none;
+}
+
+/*
+	Links
+	Remove the gray background color from active links in IE 10.
+*/
+
+a {
+	text-decoration: none;
+
+  background: transparent;
+  color: @link;
+
+  padding-bottom: .08em;
+  border-bottom: .08em solid @link;
+
+  transition: all ease .3s;
+
+  /*
+  	This rgba value is equal to the link color.
+  	It is desaturated by 80%.
+  */
+  &:link {
+  	-webkit-tap-highlight-color: rgba(12,158,241,0.2);
+  }
+
+  // Improve readability when focused and also mouse hovered in all browsers.
+	&:hover,
+	&:focus,
+	&:active {
+  	outline: 0;
+
+  	color: @link-hover;
+  	border-bottom-color: @link-hover;
+	}
+}
+
+/*
+	Text-level semantics
+	Address styling not present in IE 8/9, Safari 5, and Chrome.
+
+	At this point I want to say: .08em equals about 1px in all browsers,
+	as long as the font-size is not changed drastically. The 'right'
+	value would be .0625em but Webkit is an asshole at rounding numbers
+	and needs a higher value to display a 1px-thick line instead of nothing.
+*/
+abbr[title] {
+  border-bottom: .08em dotted;
+  cursor: help;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+  font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/*
+	Embedded content
+	Remove border when inside `a` element in IE 8/9.
+	Added the max-width: 100% magic.
+*/
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+/*
+	Grouping content
+	Address differences between Firefox and other browsers.
+*/
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/*
+	Forms
+	Known limitation: by default, Chrome and Safari on OS X allow very limited
+	styling of `select`, unless a `border` property is set.
+*/
+
+// Let's get this over with, alright?
+form * {
+  box-sizing: border-box;
+}
+
+/*
+	1. Correct color not being inherited.
+	2. Correct font properties not being inherited.
+	3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+*/
+
+button,
+input,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+// Address `overflow` set to `hidden` in IE 8/9/10.
+button {
+  overflow: visible;
+}
+
+/*
+	Address inconsistent `text-transform` inheritance for `button` and `select`.
+	All other form control elements do not inherit `text-transform` values.
+	Correct `button` style inheritance in Firefox, IE 8+, and Opera
+	Correct `select` style inheritance in Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/*
+	1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+		 and `video` controls.
+	2. Correct inability to style clickable `input` types in iOS.
+	3. Improve usability and consistency of cursor style between image-type
+		 `input` and others.
+*/
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+// Remove inner padding and border in Firefox 4+.
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+	Address Firefox 4+ setting `line-height` on `input` using `!important` in
+	the UA stylesheet.
+*/
+input {
+  line-height: normal;
+}
+
+/*
+	It's recommended that you don't attempt to style these elements.
+	Firefox's implementation doesn't respect box-sizing, padding, or width.
+
+	1. Address box sizing set to `content-box` in IE 8/9/10.
+	2. Remove excess padding in IE 8/9/10.
+*/
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0; /* 2 */
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+}
+
+/*
+	Remove inner padding and search cancel button in Safari and Chrome on OS X.
+	Safari (but not Chrome) clips the cancel button when the search input has
+	padding (and `textfield` appearance).
+*/
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// That's the way I want them to look like
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  height: @double;
+  padding-left: @half;
+
+  border: .08em solid @font + #666;
+  border-radius: @half / 2 0 0 @half / 2;
+}
+
+button[type="submit"] {
+  color: @bg;
+  background: @link;
+
+  height: @double;
+
+  border: .08em solid @link - #111;
+}
+
+/*
+	Remove default vertical scrollbar in IE 8/9.
+	Make textareas only resizable vertically.
+*/
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+// Form elements are clickable. Show this to the user.
+// Again a big Thanks to Harry Roberts. I love the idea.
+label,
+input,
+textarea,
+button,
+select,
+option{
+	cursor: pointer;
+}
+
+// Input elements making you hack away on your keyboard
+// Again a big Thanks to Harry Roberts. I love the idea.
+.text-input:active,
+.text-input:focus,
+textarea:active,
+textarea:focus{
+  cursor: text;
+  outline: none;
+}
+
+// Remove most spacing between table cells.
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Highlighting texts is a good thing, let's switch the color-theme
+::selection{
+  background: @font;
+  color: @bg;
+}

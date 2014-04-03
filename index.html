@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wired – A responsive shop wireframe by Marco Kunz</title>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Wired – A responsive shop wireframe by Marco Kunz" />
+	
+	<!-- Win8 or Apple, no matter where you're at, you are getting an icon -->
+	<meta name="application-name" content="Wired – Responsive Shop Wireframe" />
+	<meta name="msapplication-TileColor" content="#fff" />
+	<meta name="msapplication-square70x70logo" content="images/wired-msapp-70-70.png" />
+	<meta name="msapplication-square150x150logo" content="images/wired-msapp-150-150.png" />
+	<meta name="msapplication-wide310x150logo" content="images/wired-msapp-310-150.png" />
+	<meta name="msapplication-square310x310logo" content="images/wired-msapp-310-310.png" />
+	<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png" />
+	<link rel="shortcut icon" href="images/favicon.ico" />
+
+	<!-- Social Media Stuff -->
+  <meta property="og:title" content="Wired – A responsive shop wireframe by Marco Kunz" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.github.com/marcokunz/responsive-wireframe" />
+  <meta property="og:description" content="'Wired' is a responsive shop wireframe by Marco Kunz." />
+  <meta property="og:image" content="images/wired-200x200.jpg" />
+  <link rel="image_src" href="images/wired-200x200.jpg" />
+
+  <!-- Stylesheet -->
+	<!-- Development -->
+		<link type="text/css" rel="stylesheet" href="css/wired.css" />
+	<!-- -->
+	<!-- Production / Live
+		<link type="text/css" rel="stylesheet" href="css/wired.min.css" />
+	-->
+
+	<!-- HTML5 Shiv for IE8 and older -->
+	<!--[if lt IE 9]>
+  	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body class="logged-in" id="top"> <!-- Should dynamically change to logged-out when someone's not logged in -->
+
+	<h1 class="logo"><a href="#">Wired</a></h1>
+
+	<nav role="navigation" class="main-nav">
+
+		<aside class="mobile-menu-buttons">
+			<!-- Should dynamically receive numbers as classes in order to display
+			the number of items in the shopping cart -->
+			<a class="hide-text" href="#cart">Cart</a>
+			<a class="hide-text" href="#user-nav">Menu</a>
+		</aside>
+
+		<ul class="user-nav clearfix" id="user-nav">
+			<li class="logged-in"><a href="#">Your Profile</a></li>
+			<li class="logged-in"><a href="#">Logout</a></li>
+			<li class="logged-out"><a href="#login-form">Login</a></li>
+			<li class="logged-out"><a href="#signup-form">Sign Up</a></li>
+			<li><a href="#">Help</a></li>
+			<li class="closing"><a class="hide-text" href="#top">Close</a></li>
+		</ul>
+
+	</nav>
+
+	<form class="search clearfix" id="search">
+		<input class="text-input" type="search" placeholder="Search the shop" />
+		<button type="submit"><span class="short hide-text">Go</span><span class="long">Search</span></button>
+	</form>
+
+	<form class="signup clearfix" id="signup-form">
+		<input class="text-input" type="email" placeholder="Your email" required />
+		<input class="text-input" type="password" placeholder="Your password" required name="pw" id="pw" />
+		<input class="text-input" type="password" placeholder="Confirm password" name="pw2" id="pw2" oninput="check(this)" />
+		<button type="submit">Login</button>
+		<script>function check(input) { if (input.value != document.getElementById('pw').value) { input.setCustomValidity('The two passwords must match.'); } else { // input is valid -- reset the error message
+			input.setCustomValidity('');}}</script>
+	</form>
+
+	<form class="login clearfix" id="login-form">
+		<input class="text-input" type="text" placeholder="Your name" required />
+		<input class="text-input" type="email" placeholder="Your email" required />
+		<button type="submit">Submit</button>
+	</form>
+
+	<header role="banner">
+
+		<ul>
+			<li>Or some</li>
+			<li>other stuff</li>
+			<li>you may need</li>
+			<li>in your header.</li>
+		</ul>
+
+		<p>A neat sentence on top of everything. Motto? Slogan?</p>
+
+	</header>
+
+	<main role="main">
+
+		<nav class="breadcrumb">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Child</a></li>
+				<li><a href="#">Grand-Child</a></li>
+			</ul>
+		</nav>
+
+		<section class="content">
+
+			<nav class="categories-nav">
+				<h2>Categories</h2>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Filter One</a></li>
+					<li><a href="#">Filter Two</a></li>
+					<li><a href="#">Some Stuff</a></li>
+					<li><a href="#">Great stuff</a></li>
+					<li><a href="#">Wonderful stuff</a></li>
+				</ul>
+			</nav>
+
+			<article class="featured-article featured-product">
+				<h2>Featured product</h2>
+
+				<p>This could be the currently most important product of your website.</p>
+				<p>Oh, you are reading a short description of <a href="#">the product</a>.</p>
+				<p>May be you even have an image to go with it?</p>
+
+				<div class="featured-image">
+					<a href="#"><img src="images/featured.png" alt="Featured Product" /></a>
+					<p><a href="#">Featured product</a> image caption needed?</p>
+				</div>
+
+				<div class="buy-button">
+					<p class="price">1216.99€ <span>2020.99€</span></p>
+					<a href="#">Buy it now</a>
+				</div>
+			</article>
+
+			<article class="secondary-article secondary-product">
+				<h3>Secondary featured article or product</h3>
+
+				<p>Another article or product. This is the second most important one.</p>
+				<p>It also has a short description or excerpt and an image to it.</p>
+
+				<div class="secondary featured-image">
+					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
+					<p><a href="#">Secondary product</a> image caption.</p>
+				</div>
+
+				<p class="price">20$ <span>26$</span></p>
+			</article>
+
+			<article class="secondary-article secondary-product">
+				<h3>Secondary featured article or product</h3>
+
+				<p>May be you have more than one second most important <a href="#">product</a>.</p>
+				<p>It also has a short description or excerpt and an image to it.</p>
+
+				<div class="secondary featured-image">
+					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
+					<p><a href="#">Secondary product</a> image caption.</p>
+				</div>
+
+				<p class="price">20$ <span>26$</span></p>
+			</article>
+
+			<article class="secondary-article secondary-product">
+				<h3>Secondary featured article or product</h3>
+
+				<p>Third second most important <a href="#">products</a> to display.</p>
+				<p>It also has a short description or excerpt and an image to it.</p>
+
+				<div class="secondary featured-image">
+					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
+					<p><a href="#">Secondary product</a> image caption.</p>
+				</div>
+
+				<p class="price">20$ <span>26$</span></p>
+			</article>
+
+			<section class="popular-products">
+				<h3>A list of popular products</h3>
+
+				<ul>
+					<li>
+						<a href="#">
+							<div class="popular">
+								<h4>Product Name</h4>
+								<img src="images/popular.png" alt="A Popular Product" />
+								<p class="price">20$ <span>26$</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="popular">
+								<h4>Product Name</h4>
+								<img src="images/popular.png" alt="A Popular Product" />
+								<p class="price">20$ <span>26$</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="popular">
+								<h4>Product Name</h4>
+								<img src="images/popular.png" alt="A Popular Product" />
+								<p class="price">20$ <span>26$</span></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="popular">
+								<h4>Product Name</h4>
+								<img src="images/popular.png" alt="A Popular Product" />
+								<p class="price">20$ <span>26$</span></p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</section>
+
+		</section>
+
+		<aside class="sidebar-contents">
+
+			<section class="widget news">
+				<h4>News</h4>
+
+				<div class="news-post">
+					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
+					<p class="news-heading">News Headline</p>
+					<p class="news-text">News text goes here.</p>
+					<a class="read-more" href="#">More</a>
+				</div>
+
+				<div class="news-post">
+					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
+					<p class="news-heading">News Headline</p>
+					<p class="news-text">News text goes here.</p>
+					<a class="read-more" href="#">More</a>
+				</div>
+
+				<div class="news-post">
+					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
+					<p class="news-heading">News Headline</p>
+					<p class="news-text">News text goes here.</p>
+					<a class="read-more" href="#">More</a>
+				</div>
+			</section>
+
+			<section class="widget mailing">
+				<h4>Newsletter</h4>
+
+				<p>Subscribe to our monthly newsletter with a lot of words in it. Sometimes it has images, too.</p>
+				<p>Subscribe now and receive a discount code saving you <strong class="discount">X%</strong> with your next purchase.</p>
+
+				<form class="signup">
+					<button type="submit">Subscribe</button>
+				</form>
+			</section>
+
+			<section class="widget partner">
+				<h4>Business Partners</h4>
+
+				<ul>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
+				</ul>
+			</section>
+
+		</aside>
+	</main>
+
+	<footer role="content-information">
+
+		<section class="footer-box customer-care">
+			<h5>Customer Care</h5>
+
+			<nav>
+				<ul>
+					<li class="logged-in"><a href="#">Your Account</a></li>
+					<li class="logged-in"><a href="#">Your Cart</a></li>
+					<li class="logged-in"><a href="#">Logout</a></li>
+					<li class="logged-out"><a href="#">Login</a></li>
+					<li class="logged-out"><a href="#">Sign Up</a></li>
+					<li><a href="#">Shipping</a></li>
+					<li><a href="#">F.A.Q.</a></li>
+					<li><a href="#">Terms and Conditions</a></li>
+					<li><a href="#">Disclaimer / Imprint</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section class="footer-box about">
+			<h5>About Us</h5>
+
+			<nav>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Job Offers</a></li>
+					<li><a href="#">Privacy (we take it personal)</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section class="footer-box certificates">
+			<h5>Security &amp; Standards Certificates</h5>
+
+			<ul>
+				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
+				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
+				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
+				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
+				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
+			</ul>
+		</section>
+
+	</footer>
+
+	<noscript>
+		<div class="no-js-no-content">
+			<p>It seems you have Javascript disabled by default. That's too bad.</p>
+			<p>This website and large parts of the internet itself are built with Javascript and we recommend enabling it to utilize the functionality of this website on one hand and to enhance your overall browsing-experience on the other.</p> 
+		</div>
+	</noscript>
+
+	<!--[if lt IE 8]>
+		<div class="ie7-and-older">
+			<p>We are sorry to tell you but your browser is not supported any longer.</p>
+			<p>The point is not to prevent you from browsing our shop and stopping you from buying our products but to tell you that your browser is a security risk for yourself.</p>
+			<p>By downloading and installing a "more up to date" browser like <a href="#">Mozilla Firefox</a>, <a href="#">Google Chrome</a> or <a href="#">Opera</a> you will not only have a better browsing experience but also prevent malicious software from intruding your computer.</p>
+		</div>
+	<![endif]-->
+
+<!-- Development -->
+<script type="text/javascript" src="concatenated/wired.js"></script>
+<!-- -->
+<!-- Production 
+<script type="text/javascript" src="js/wired.min.js"></script>
+-->
+</body>
+</html>
