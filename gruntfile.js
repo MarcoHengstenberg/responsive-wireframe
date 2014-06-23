@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 			options: {
         livereload: true,
     	},
-			
+
 			html: {
 				files: ['*.html'], // watch index.html for changes
 				tasks: ['htmlhint'] // when changes -> do task
@@ -136,7 +136,7 @@ module.exports = function(grunt) {
 
 			imagemin: {
 				files: ['raw/*.jpg', 'raw/*.png'],
-				tasks: ['crunch']
+				tasks: ['crunchy']
 			}
 		}
 
@@ -146,5 +146,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', []);
 	grunt.registerTask('lessy', ['less', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('jayessy', ['concat', 'uglify']);
-	grunt.registerTask('crunch', ['imagemin']);
+	grunt.registerTask('crunchy', ['imagemin']);
 }
