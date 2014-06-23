@@ -1,358 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Wired – A responsive shop wireframe by Marco Kunz</title>
+<html>
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Wired – A responsive shop wireframe by Marco Kunz" />
-	
-	<!-- Win8 or Apple, no matter where you're at, you are getting an icon -->
-	<meta name="application-name" content="Wired – Responsive Shop Wireframe" />
-	<meta name="msapplication-TileColor" content="#fff" />
-	<meta name="msapplication-square70x70logo" content="images/wired-msapp-70-70.png" />
-	<meta name="msapplication-square150x150logo" content="images/wired-msapp-150-150.png" />
-	<meta name="msapplication-wide310x150logo" content="images/wired-msapp-310-150.png" />
-	<meta name="msapplication-square310x310logo" content="images/wired-msapp-310-310.png" />
-	<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png" />
-	<link rel="shortcut icon" href="images/favicon.ico" />
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Responsive-wireframe : A responsive shop wireframe. A personal sandbox to try stuff out." />
 
-	<!-- Social Media Stuff -->
-  <meta property="og:title" content="Wired – A responsive shop wireframe by Marco Kunz" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.github.com/marcokunz/responsive-wireframe" />
-  <meta property="og:description" content="'Wired' is a responsive shop wireframe by Marco Kunz." />
-  <meta property="og:image" content="images/wired-200x200.jpg" />
-  <link rel="image_src" href="images/wired-200x200.jpg" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-  <!-- Stylesheet -->
-	<!-- Development -->
-		<link type="text/css" rel="stylesheet" href="css/wired.css" />
-	<!-- -->
-	<!-- Production / Live
-		<link type="text/css" rel="stylesheet" href="css/wired.min.css" />
-	-->
+    <title>Responsive-wireframe</title>
+  </head>
 
-	<!-- HTML5 Shiv for IE8 and older -->
-	<!--[if lt IE 9]>
-  	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <body>
 
-</head>
-<body class="logged-out" id="top"> <!-- Should dynamically change to logged-in when someone's logged in -->
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/MarcoKunz/responsive-wireframe">View on GitHub</a>
 
-	<h1 class="logo"><a href="#">Wired</a></h1>
+          <h1 id="project_title">Responsive-wireframe</h1>
+          <h2 id="project_tagline">A responsive shop wireframe. A personal sandbox to try stuff out.</h2>
 
-	<nav role="navigation" class="main-nav">
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/MarcoKunz/responsive-wireframe/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/MarcoKunz/responsive-wireframe/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-		<aside class="mobile-menu-buttons">
-			<!-- Should dynamically receive numbers as classes in order to display
-			the number of items in the shopping cart -->
-			<a class="hide-text" href="#cart">Cart</a>
-			<a class="hide-text" href="#user-nav">Menu</a>
-		</aside>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-		<ul class="user-nav clearfix" id="user-nav">
-			<li class="logged-in"><a href="#">Your Profile</a></li>
-			<li class="logged-in"><a href="#">Logout</a></li>
-			<li class="logged-out"><a href="#signup-form">Sign Up</a></li>
-			<li class="logged-out"><a href="#login-form">Login</a></li>
-			<li><a href="#">Help</a></li>
-			<li class="closing"><a class="hide-text" href="#top">Close</a></li>
-		</ul>
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-	</nav>
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
 
-	<form class="signup clearfix" id="signup-form">
-		<h3>Create an account</h3>
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<input class="text-input" type="password" placeholder="Your password" required name="pw" id="pw" />
-		<input class="text-input" type="password" placeholder="Confirm your password" required name="pw2" id="pw2" oninput="check(this)" />
-		<button type="submit">Login</button>
-		<script>function check(input) { if (input.value != document.getElementById('pw').value) { input.setCustomValidity('The two passwords must match.'); } else { // input is valid -- reset the error message
-			input.setCustomValidity('');}}</script>
-		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
-	</form>
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-	<form class="login clearfix" id="login-form">
-		<h3>Login</h3>
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<input class="text-input" type="password" placeholder="Your password" required />
-		<button type="submit">Submit</button>
-		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
-	</form>
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-	<header role="banner">
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-		<p>Welcome to my wonderful shop wireframe. May your stay be a pleasant one.</p>
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-		<p>Did you know that, <strong>today</strong>, you could <a href="#">save 5%</a><br />
-			<small>on any purchase worth more than 50€? If this were a real shop of course.</small></p>
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-	</header>
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-	<form class="search clearfix" id="search">
-		<input class="text-input" type="search" placeholder="Search the shop" />
-		<button type="submit"><span class="short hide-text">Go</span><span class="long">Search</span></button>
-	</form>
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-	<main role="main">
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-		<nav class="breadcrumb clearfix">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Child</a></li>
-				<li><a href="#">Grand-Child</a></li>
-			</ul>
-		</nav>
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
 
-		<section class="content">
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Responsive-wireframe maintained by <a href="https://github.com/MarcoKunz">MarcoKunz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-			<nav class="categories-nav">
-				
-				<h2><a href="#categories"></a>Categories</h2>
+    
 
-				<ul id="categories">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Filter One</a></li>
-					<li><a href="#">Filter Two</a></li>
-					<li><a href="#">Some Stuff</a></li>
-					<li><a href="#">Great stuff</a></li>
-					<li><a href="#">Wonderful stuff</a></li>
-				</ul>
-			</nav>
-
-			<article class="featured-article featured-product">
-				<h2>Featured product</h2>
-
-				<p>This could be the currently most important product of your website.</p>
-				<p>Oh, you are reading a short description of <a href="#">the product</a>.</p>
-				<p>May be you even have an image to go with it?</p>
-
-				<div class="featured-image">
-					<a href="#"><img src="images/featured.png" alt="Featured Product" /></a>
-					<p><a href="#">Featured product</a> image caption needed?</p>
-				</div>
-
-				<div class="buy-button">
-					<p class="price">1216.99€ <span>2020.99€</span></p>
-					<a href="#">Buy it now</a>
-				</div>
-			</article>
-
-			<article class="secondary-article secondary-product">
-				<h3>Secondary featured article or product</h3>
-
-				<p>Another article or product. This is the second most important one.</p>
-				<p>It also has a short description or excerpt and an image to it.</p>
-
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
-				</div>
-
-				<p class="price">20$ <span>26$</span></p>
-			</article>
-
-			<article class="secondary-article secondary-product">
-				<h3>Secondary featured article or product</h3>
-
-				<p>May be you have more than one second most important <a href="#">product</a>.</p>
-				<p>It also has a short description or excerpt and an image to it.</p>
-
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
-				</div>
-
-				<p class="price">20$ <span>26$</span></p>
-			</article>
-
-			<article class="secondary-article secondary-product">
-				<h3>Secondary featured article or product</h3>
-
-				<p>Third second most important <a href="#">products</a> to display.</p>
-				<p>It also has a short description or excerpt and an image to it.</p>
-
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
-				</div>
-
-				<p class="price">20$ <span>26$</span></p>
-			</article>
-
-			<section class="popular-products">
-				<h3>A list of popular products</h3>
-
-				<ul>
-					<li>
-						<a href="#">
-							<div class="popular">
-								<h4>Product Name</h4>
-								<img src="images/popular.png" alt="A Popular Product" />
-								<p class="price">20$ <span>26$</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="popular">
-								<h4>Product Name</h4>
-								<img src="images/popular.png" alt="A Popular Product" />
-								<p class="price">20$ <span>26$</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="popular">
-								<h4>Product Name</h4>
-								<img src="images/popular.png" alt="A Popular Product" />
-								<p class="price">20$ <span>26$</span></p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="popular">
-								<h4>Product Name</h4>
-								<img src="images/popular.png" alt="A Popular Product" />
-								<p class="price">20$ <span>26$</span></p>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</section>
-
-		</section>
-
-		<aside class="sidebar-contents">
-
-			<section class="widget news">
-				<h4>News</h4>
-
-				<div class="news-post">
-					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
-					<p class="news-heading">News Headline</p>
-					<p class="news-text">News text goes here.</p>
-					<a class="read-more" href="#">More</a>
-				</div>
-
-				<div class="news-post">
-					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
-					<p class="news-heading">News Headline</p>
-					<p class="news-text">News text goes here.</p>
-					<a class="read-more" href="#">More</a>
-				</div>
-
-				<div class="news-post">
-					<time datetime="yyyy-mm-dd">yyyy-mm-dd</time>
-					<p class="news-heading">News Headline</p>
-					<p class="news-text">News text goes here.</p>
-					<a class="read-more" href="#">More</a>
-				</div>
-			</section>
-
-			<section class="widget mailing">
-				<h4>Newsletter</h4>
-
-				<p>Subscribe to our monthly newsletter with a lot of words in it. Sometimes it has images, too.</p>
-				<p>Subscribe now and receive a discount code saving you <strong class="discount">X%</strong> with your next purchase.</p>
-
-				<form class="signup">
-					<button type="submit">Subscribe</button>
-				</form>
-			</section>
-
-			<section class="widget partner">
-				<h4>Business Partners</h4>
-
-				<ul>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-					<li><a href="#"><img src="images/business-partner.png" alt="Business Partner" /></a></li>
-				</ul>
-			</section>
-
-		</aside>
-	</main>
-
-	<footer role="content-information">
-
-		<section class="footer-box customer-care">
-			<h5>Customer Care</h5>
-
-			<nav>
-				<ul>
-					<li class="logged-in"><a href="#">Your Account</a></li>
-					<li class="logged-in"><a href="#">Your Cart</a></li>
-					<li class="logged-in"><a href="#">Logout</a></li>
-					<li class="logged-out"><a href="#">Login</a></li>
-					<li class="logged-out"><a href="#">Sign Up</a></li>
-					<li><a href="#">Shipping</a></li>
-					<li><a href="#">F.A.Q.</a></li>
-					<li><a href="#">Terms and Conditions</a></li>
-					<li><a href="#">Disclaimer / Imprint</a></li>
-				</ul>
-			</nav>
-		</section>
-
-		<section class="footer-box about">
-			<h5>About Us</h5>
-
-			<nav>
-				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Job Offers</a></li>
-					<li><a href="#">Privacy (we take it personal)</a></li>
-				</ul>
-			</nav>
-		</section>
-
-		<section class="footer-box certificates">
-			<h5>Security &amp; Standards Certificates</h5>
-
-			<ul>
-				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
-				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
-				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
-				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
-				<li><a href="#"><img src="images/certificate.png" alt="Certificate" /></a></li>
-			</ul>
-		</section>
-
-	</footer>
-
-	<noscript>
-		<div class="no-js-no-content">
-			<p>It seems you have Javascript disabled by default. That's too bad.</p>
-			<p>This website and large parts of the internet itself are built with Javascript and we recommend enabling it to utilize the functionality of this website on one hand and to enhance your overall browsing-experience on the other.</p> 
-		</div>
-	</noscript>
-
-	<!--[if lt IE 8]>
-		<div class="ie7-and-older">
-			<p>We are sorry to tell you but your browser is not supported any longer.</p>
-			<p>The point is not to prevent you from browsing our shop and stopping you from buying our products but to tell you that your browser is a security risk for yourself.</p>
-			<p>By downloading and installing a "more up to date" browser like <a href="#">Mozilla Firefox</a>, <a href="#">Google Chrome</a> or <a href="#">Opera</a> you will not only have a better browsing experience but also prevent malicious software from intruding your computer.</p>
-		</div>
-	<![endif]-->
-
-<!-- Development -->
-<script type="text/javascript" src="concatenated/wired.js"></script>
-<!-- -->
-<!-- Production 
-<script type="text/javascript" src="js/wired.min.js"></script>
--->
-</body>
+  </body>
 </html>
