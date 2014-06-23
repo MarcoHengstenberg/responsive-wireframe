@@ -276,13 +276,20 @@ input[type="text"] {
 
   &:focus,
   &:active {
-    border-color: @font + #555;
+    border-color: @link - #111;
   }
 }
 
+// Checking for validity
+.login input[type="email"]:valid,
+/*
+  the input password for the login does not need a validation
+  could be confused with "Ah I typed the right password but how do they know?".
+*/
 .signup input[type="email"]:valid,
 .signup input[type="password"]:valid {
-  box-shadow: 0 0 .08em #6ECE0A; // green means you're good to go
+  border-color: #6ECE0A; // green means you're good to go
+  box-shadow: none;
 }
 
 button[type="submit"] {
@@ -340,4 +347,16 @@ table {
 ::selection{
   background: @font;
   color: @bg;
+}
+
+/* Catching all Win8 devices */
+@-ms-viewport{
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+/* Making touch available for Win8 IE10 users */
+canvas {
+  -ms-touch-action: double-tap-zoom;
 }

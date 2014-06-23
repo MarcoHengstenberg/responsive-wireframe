@@ -324,12 +324,15 @@ input[type="search"]:active,
 input[type="email"]:active,
 input[type="password"]:active,
 input[type="text"]:active {
-  border-color: #acaeaf;
+  border-color: #008ee0;
 }
+.login input[type="email"]:valid,
+.login input[type="password"]:valid,
 .signup input[type="email"]:valid,
 .signup input[type="password"]:valid {
-  -webkit-box-shadow: 0 0 .08em #6ECE0A;
-  box-shadow: 0 0 .08em #6ECE0A;
+  border-color: #6ECE0A;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 button[type="submit"] {
   color: #fafdfa;
@@ -376,6 +379,17 @@ table {
 ::selection {
   background: #57595a;
   color: #fafdfa;
+}
+/* Catching all Win8 devices */
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+/* Making touch available for Win8 IE10 users */
+canvas {
+  -ms-touch-action: double-tap-zoom;
 }
 /*
 	I'm going with Lobster (a display font) for the "Logo" and
@@ -510,8 +524,8 @@ a[href="#cart"],
   width: 2.618em;
   border: 0.08em solid #008ee0;
   border-radius: 0.309em;
-  -webkit-box-shadow: 0.125em 0 0.125em rgba(0, 0, 0, 0.1);
-  box-shadow: 0.125em 0 0.125em rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0.08em 0.08em rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.08em 0.08em rgba(0, 0, 0, 0.4);
 }
 a[href="#user-nav"]:hover,
 a[href="#cart"]:hover,
@@ -550,8 +564,8 @@ a[href="#user-nav"] {
   top: -100em;
   height: 0;
   padding: 0;
-  -webkit-transition: top ease .3s;
-  transition: top ease .3s;
+  -webkit-transition: top ease .6s;
+  transition: top ease .6s;
 }
 .user-nav li {
   font-size: 2em;
@@ -579,6 +593,7 @@ a[href="#user-nav"] {
   padding: 1.25em 0 1.618em;
   margin-bottom: 1em;
   background-color: #fafdfa;
+  z-index: 9;
 }
 .logged-in .logged-in,
 .logged-out .logged-out {
@@ -596,7 +611,8 @@ form h3 {
   margin-bottom: 0.618em;
 }
 .search {
-  margin: 1.618em 0;
+  margin: 1.618em 0 0;
+  padding-bottom: 1.618em;
 }
 .search .long {
   display: none;
@@ -618,6 +634,7 @@ form h3 {
 input[type="search"] {
   width: 70%;
   float: left;
+  border-right: 0;
 }
 /*
 	Login and Signup Forms are only needed when someone
@@ -664,6 +681,7 @@ input[type="search"] {
 }
 header {
   margin-top: 1.618em;
+  border-bottom: .08em solid silver;
 }
 header p {
   font-size: 1.125em;
@@ -682,7 +700,7 @@ header p a:active {
   color: #ff676f;
 }
 .breadcrumb {
-  margin-bottom: 1.618em;
+  margin: 1em 0;
 }
 .breadcrumb li {
   float: left;
@@ -693,30 +711,67 @@ header p a:active {
 .breadcrumb li:last-child:after {
   content: " ";
 }
+.categories-nav {
+  position: relative;
+  padding-bottom: 1.618em;
+  border-bottom: .08em solid silver;
+}
 .categories-nav h2 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 2.5em;
+  font-size: 2em;
   padding: 0.206em;
-  border: 0.04em solid #57595a;
+  border: 0.04em solid #0d9ff1;
   -webkit-transition: border-color ease 0.3s;
   transition: border-color ease 0.3s;
 }
-.categories-nav h2:hover,
-.categories-nav h2:focus,
-.categories-nav h2:active {
-  cursor: pointer;
-  border-color: #0d9ff1;
+.categories-nav h2:hover {
+  border-color: #0c4d71;
 }
-.categories-nav h2:after {
+.categories-nav h2 a {
+  border: 0;
+  display: block;
+}
+.categories-nav h2 a:after {
   position: relative;
   top: .8em;
   content: "\0020";
   width: 0;
   height: 0;
-  margin-left: 1em;
+  margin-left: 2.618em;
   border-left: 0.309em solid transparent;
   border-right: 0.309em solid transparent;
-  border-top: 0.309em solid #57595a;
+  border-top: 0.309em solid #0d9ff1;
+}
+.categories-nav h2 a:hover:after {
+  border-top-color: #0c4d71;
+}
+.categories {
+  /*text-align: center;
+	height: 0;
+	visibility: hidden;
+
+	&:target {
+		visibility: visible;
+
+		position: absolute;
+		top: 0;
+
+		width: 100%;
+		height: auto;
+
+		background: @bg;
+		z-index: 9;
+	}
+
+	li {
+		width: 50%;
+		float: left;
+		margin-bottom: @double;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}*/
 }

@@ -81,6 +81,7 @@ module.exports = function(grunt) {
 		},
 
 		// Image Compression Block
+		// We fire that one manually until the watch task is working again
 		imagemin: {
 			png: {
 				options: {
@@ -134,8 +135,8 @@ module.exports = function(grunt) {
 			},
 
 			imagemin: {
-				files: ['raw/*.jpg', 'raw/*.png'], // watch for images with those extensions being put into the raw folder
-				tasks: ['imagemin'] // new images -> do task
+				files: ['raw/*.jpg', 'raw/*.png'],
+				tasks: ['crunch']
 			}
 		}
 
@@ -145,4 +146,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', []);
 	grunt.registerTask('lessy', ['less', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('jayessy', ['concat', 'uglify']);
+	grunt.registerTask('crunch', ['imagemin']);
 }

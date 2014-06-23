@@ -51,7 +51,7 @@ a[href="#cart"],
 	border: .08em solid @link - #111;
 	border-radius: @half / 2;
 
-	box-shadow: .125em 0 .125em rgba(0,0,0,.1);
+	box-shadow: 0 .08em .08em rgba(0,0,0,.4);
 
 	&:hover {
 		background-color: @link + #111;
@@ -96,7 +96,7 @@ a[href="#user-nav"] {
   height: 0;
   padding: 0;
 
-  transition: top ease .3s;
+  transition: top ease .6s;
 
   li {
   	font-size: @one * 2;
@@ -120,18 +120,20 @@ a[href="#user-nav"] {
   		background-size: 61.8%;
   	}
   }
-}
 
-.user-nav:target {
-	top: 0;
+  &:target {
+		top: 0;
 
-  height: 100%;
-  overflow-y: scroll;
-  width: 100%;
-  padding: @one + @one / 4 0 @gold;
-  margin-bottom: @one;
+	  height: 100%;
+	  overflow-y: scroll;
+	  width: 100%;
+	  padding: @one + @one / 4 0 @gold;
+	  margin-bottom: @one;
 
-  background-color: @bg;
+	  background-color: @bg;
+
+	  z-index: 9; // over over everything
+	}
 }
 
 // Switching the nav lis on the state of the user
@@ -158,7 +160,8 @@ form h3 {
 
 // A search is crucial to a proper shop experience
 .search {
-	margin: @gold 0;
+	margin: @gold 0 0;
+	padding-bottom: @gold;
 
 	.long {
 		display: none;
@@ -185,6 +188,7 @@ form h3 {
 input[type="search"] {
 	width: 70%;
 	float: left;
+	border-right: 0;
 }
 
 /*
@@ -239,6 +243,7 @@ input[type="search"] {
 // A greeting sentence or motto or slogan
 header {
 	margin-top: @gold;
+	border-bottom: .08em solid silver;
 
 	p {
 		font-size: 1.125em;
@@ -264,7 +269,7 @@ header {
 
 // Breadcrumb Navigation – we have that too
 .breadcrumb {
-	margin-bottom: @gold;
+	margin: @one 0;
 
 	li {
 		float: left;
@@ -280,34 +285,76 @@ header {
 }
 
 // Categories Navigation
-.categories-nav h2 {
-	box-sizing: border-box;
+.categories-nav {
+	position: relative;
 
-	font-size: 2.5em;
-	padding: @half / 3;
+	padding-bottom: @gold;
+	border-bottom: .08em solid silver;
 
-	border: .04em solid @font;
+	h2 {
+		box-sizing: border-box;
 
-	transition: border-color ease .3s;
+		font-size: 2em;
+		padding: @half / 3;
 
-	&:hover,
-	&:focus,
-	&:active {
-		cursor: pointer;
-		border-color: @link;
+		border: .04em solid @link;
+
+		transition: border-color ease .3s;
+
+		&:hover {
+			border-color: @link-hover;
+		}
+
+		a {
+			border: 0;
+			display: block;
+
+			&:after {
+				position: relative;
+				top: .8em;
+
+				content: "\0020";
+				width: 0;
+				height: 0;
+				margin-left: @double;
+
+				border-left: @half / 2 solid transparent;
+				border-right: @half / 2 solid transparent;
+				border-top: @half / 2 solid @link;
+			}
+
+			&:hover:after {
+				border-top-color: @link-hover;
+			}
+		}
+	}
+}
+
+.categories {
+	/*text-align: center;
+	height: 0;
+	visibility: hidden;
+
+	&:target {
+		visibility: visible;
+
+		position: absolute;
+		top: 0;
+
+		width: 100%;
+		height: auto;
+
+		background: @bg;
+		z-index: 9;
 	}
 
-	&:after {
-		position: relative;
-		top: .8em;
+	li {
+		width: 50%;
+		float: left;
+		margin-bottom: @double;
 
-		content: "\0020";
-		width: 0;
-		height: 0;
-		margin-left: @one;
-
-		border-left: @half / 2 solid transparent;
-		border-right: @half / 2 solid transparent;
-		border-top: @half / 2 solid @font;
-	}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}*/
 }
