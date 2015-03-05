@@ -11,13 +11,13 @@
 }
 
 // Clearfixing... always a good thing
-.clearfix:before,
-.clearfix:after {
-  content: "\0020"; // you see nothing as this is space in Unicode
+.cf::before,
+.cf::after {
+  content: " "; // you see nothing as this is space in Unicode
   font: 0/0 a; // and I will make extra sure you see nothing in Opera
   display: table;
 }
 
-.clearfix:after {
+.cf::after {
   clear: both;
 }

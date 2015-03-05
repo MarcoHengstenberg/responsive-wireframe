@@ -1,0 +1,34 @@
+/** mobile-search-wired.less **/
+
+// A search is crucial to a proper shop experience
+.search {
+  margin: @gold 0 0;
+  padding-bottom: @gold;
+
+  .long {
+    display: none;
+
+    background: url(../images/svg/search-icon.svg) no-repeat 50% 50%;
+    background-size: contain;
+  }
+
+  .short {
+    display: block;
+
+    background: url(../images/svg/search-icon.svg) no-repeat 50% 50%;
+    background-size: contain;
+  }
+
+  button {
+    float: left;
+    width: 30%;
+
+    border-radius: 0 @half / 2 @half / 2 0;
+  }
+}
+
+input[type="search"] {
+  width: 70%;
+  float: left;
+  border-right: 0;
+}

@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<meta name="description" content="Wired – A responsive shop wireframe by Marco Kunz" />
-	
+
 	<!-- Win8 or Apple, no matter where you're at, you are getting an icon -->
 	<meta name="application-name" content="Wired – Responsive Shop Wireframe" />
 	<meta name="msapplication-TileColor" content="#fff" />
@@ -21,7 +21,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png" />
-	<link rel="shortcut icon" href="images/favicon.ico" />
+  <!--[if IE]><link href="favicon.ico" rel="icon" /><![endif]-->
+  <link href="images/favicon.png" rel="icon" />
 
 	<!-- Social Media Stuff -->
   <meta property="og:title" content="Wired – A responsive shop wireframe by Marco Kunz" />
@@ -41,25 +42,26 @@
 
 	<!-- HTML5 Shiv for IE8 and older -->
 	<!--[if lt IE 9]>
+		<link href="ie8.css" type="text/css" rel="stylesheet" />
   	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
 </head>
 <body class="logged-out" id="top"> <!-- Should dynamically change to logged-in when someone's logged in -->
 
-	<h1 class="logo"><a href="#">Wired</a></h1>
-
 	<div class="mobile-menu-buttons">
 		<!-- Should dynamically receive numbers as classes in order to display
 		the number of items in the shopping cart -->
-		<a class="hide-text" href="#cart">Cart</a>
+		<a class="hide-text" href="#cart">Cart <span class="items-in-cart" title="You have 1 item in your cart">1</span></a>
 		<a class="hide-text" href="#user-nav">Menu</a>
 	</div>
 
+	<h1 class="logo"><a href="#">Wired</a></h1>
+
 	<nav role="navigation" class="main-nav">
 
-		<ul class="user-nav clearfix" id="user-nav">
-			<li class="logged-in"><a href="#">Your Profile</a></li>
+		<ul class="user-nav cf" id="user-nav">
+			<li class="logged-in"><a href="#">Your Account</a></li>
 			<li class="logged-in"><a href="#">Logout</a></li>
 			<li class="logged-out"><a href="#signup-form">Sign Up</a></li>
 			<li class="logged-out"><a href="#login-form">Login</a></li>
@@ -69,22 +71,22 @@
 
 	</nav>
 
-	<form class="signup clearfix" id="signup-form">
-		<h3>Create an account</h3>
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<input class="text-input" type="password" placeholder="Your password" required name="pw" id="pw" />
-		<input class="text-input" type="password" placeholder="Confirm your password" required name="pw2" id="pw2" oninput="check(this)" />
-		<button type="submit">Login</button>
-		<script>function check(input) { if (input.value != document.getElementById('pw').value) { input.setCustomValidity('The two passwords must match.'); } else { // input is valid -- reset the error message
-			input.setCustomValidity('');}}</script>
+	<form class="signup cf" id="signup-form">
+		<h3><label for="signup-email">Create an account</label></h3>
+		<input class="text-input" type="email" placeholder="Your email" id="signup-email" />
+		<input class="text-input" type="password" placeholder="Your password" name="pw" id="pw" />
+		<input class="text-input" type="password" placeholder="Confirm your password" name="pw2" id="pw2" oninput="check(this)" />
+		<button type="submit">Sign up</button>
+		<p>Already registered? <a href="#login-form">To the login-form Batman!</a></p>
 		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
 	</form>
 
-	<form class="login clearfix" id="login-form">
-		<h3>Login</h3>
-		<input class="text-input" type="email" placeholder="Your email" required />
-		<input class="text-input" type="password" placeholder="Your password" required />
-		<button type="submit">Submit</button>
+	<form class="login cf" id="login-form">
+		<h3><label for="login-email">Login</label></h3>
+		<input class="text-input" type="email" placeholder="Your email" id="login-email" />
+		<input class="text-input" type="password" placeholder="Your password" />
+		<button type="submit">Login</button>
+		<p>You <a href="#">forgot the password</a> or are a <a href="#signup-form">new user?</a></p>
 		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
 	</form>
 
@@ -92,62 +94,57 @@
 
 		<p>Welcome to my wonderful shop wireframe. May your stay be a pleasant one.</p>
 
-		<p>Did you know that, <strong>today</strong>, you could <a href="#">save 5%</a><br />
-			<small>on any purchase worth more than 50€? If this were a real shop of course.</small></p>
+		<p>Did you know that, <strong>today</strong>, you could <a href="#">save5%</a> <small>(on any purchase worth more than 50€)</small></p>
 
 	</header>
 
-	<form class="search clearfix" id="search">
+	<form class="search cf" id="search">
 		<input class="text-input" type="search" placeholder="Search the shop" />
 		<button type="submit"><span class="short hide-text">Go</span><span class="long">Search</span></button>
 	</form>
 
-	<h2><a href="#categories">Categories</a></h2>
-
 	<nav class="categories-nav" id="categories">
 
-		<div class="categories-background">
+		<h2 class="cat-toggle" id="close-categories"><a href="#categories">Categories</a></h2>
 
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Filter One</a></li>
-				<li><a href="#">Filter Two</a></li>
-				<li><a href="#">Some Stuff</a></li>
-				<li><a href="#">Great stuff</a></li>
-				<li><a href="#">Wonderful stuff</a></li>
-			</ul>
-
-		</div>
-
-		<p class="closing"><a class="hide-text" href="#">Close</a></p>
+		<ul>
+			<li><a href="#">Filter One</a></li>
+			<li><a href="#">Filter Two</a></li>
+			<li><a href="#">Filter for stuff</a></li>
+			<li><a href="#">Filter for great stuff</a></li>
+			<li><a href="#">Filter for beautiful stuff</a></li>
+			<li><a href="#">Filter for wonderful stuff</a></li>
+			<li><a href="#">Filter for miscellaneous stuff</a></li>
+			<li class="closing"><a href="#close-categories">Close Categories</a></li>
+		</ul>
 	</nav>
 
-	<main role="main">
+	<nav class="breadcrumb cf">
+		<ul>
+			<li class="current-breadcrumb" title="You are here">Home</li>
+		</ul>
+	</nav>
 
-		<nav class="breadcrumb clearfix">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Child</a></li>
-				<li><a href="#">Grand-Child</a></li>
-			</ul>
-		</nav>
+	<main role="main" class="main">
 
 		<section class="content">
 
 			<article class="featured-article featured-product">
-				<h2>Featured product</h2>
+				<h2><a href="#">Featured product</a></h2>
 
-				<p>This could be the currently most important product of your website.</p>
-				<p>Oh, you are reading a short description of <a href="#">the product</a>.</p>
+				<figure class="featured-image">
+					<a href="#"><img src="images/featured.jpg" alt="Featured Product" /></a>
+					<figcaption><a href="#">Featured product</a> image <em>caption</em> <strong>needed?</strong></figcaption>
+				</figure>
+
+				<p>This could be the most important product of your website for example. Or simply the best-selling product. <em>You must choose, but choose wisely!</em></p>
+
+				<p>Oh, in case you didn't notice, you are reading a short description of <a href="#">your featured product</a>.</p>
+
 				<p>May be you even have an image to go with it?</p>
 
-				<div class="featured-image">
-					<a href="#"><img src="images/featured.jpg" alt="Featured Product" /></a>
-					<p><a href="#">Featured product</a> image caption needed?</p>
-				</div>
-
 				<div class="buy-button">
-					<p class="price">1216.99€ <span>2020.99€</span></p>
+					<p class="price" title="Current price">1216.99€ <span title="Original price">2020.99€</span></p>
 					<a href="#">Buy it now</a>
 				</div>
 			</article>
@@ -270,9 +267,10 @@
 				<h4>Newsletter</h4>
 
 				<p>Subscribe to our monthly newsletter with a lot of words in it. Sometimes it has images, too.</p>
-				<p>Subscribe now and receive a discount code saving you <strong class="discount">X%</strong> with your next purchase.</p>
+				<p>Subscribe now and receive a discount code saving you <strong class="discount">10%</strong> with your next purchase.</p>
 
-				<form class="signup">
+				<form class="newsletter-signup">
+					<input type="email" placeholder="Your email please" required />
 					<button type="submit">Subscribe</button>
 				</form>
 			</section>
@@ -341,13 +339,6 @@
 
 	</footer>
 
-	<noscript>
-		<div class="no-js-no-content">
-			<p>It seems you have Javascript disabled by default. That's too bad.</p>
-			<p>This website and large parts of the internet itself are built with Javascript and we recommend enabling it to utilize the functionality of this website on one hand and to enhance your overall browsing-experience on the other.</p> 
-		</div>
-	</noscript>
-
 	<!--[if lt IE 8]>
 		<div class="ie7-and-older">
 			<p>We are sorry to tell you but your browser is not supported any longer.</p>
@@ -357,9 +348,9 @@
 	<![endif]-->
 
 <!-- Development -->
-<script type="text/javascript" src="concatenated/wired.js"></script>
+<script src="concatenated/wired.js"></script>
 <!-- -->
-<!-- Production 
+<!-- Production
 <script type="text/javascript" src="js/wired.min.js"></script>
 -->
 </body>
