@@ -34,7 +34,7 @@ The way I structure my LESS files to create beautiful CSS is well documented in 
 
 ## Credits
 
-This work of mine wouldn't be possible without a few people around the globe, who helped me becoming the person/developer I am today. Apart from my family and friends those people are nerdy, geeky, techy web developers, engineers or designers and I love them to bits for their work, enthusiasm and other good things like inspiration and foremost their help.
+This work of mine wouldn't be possible without a few people around the globe, who helped me becoming the person/developer I am today. Those people are nerdy, geeky, techy web developers, engineers or designers and I love them to bits for their work, enthusiasm and other good things like inspiration and foremost their help.
 
 ## License
 
