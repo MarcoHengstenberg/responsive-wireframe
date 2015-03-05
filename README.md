@@ -30,7 +30,7 @@ I'm using *[Grunt](http://gruntjs.com)* with the following tasks:
 
 ## LESStoCSS
 
-The way I structure my LESS files to create beautiful CSS is well documented in the files themselves. So, if you are really interested dive into the LESS-directory, open a file and read what's there ot know what's going on where and why.
+The way I structure my LESS files to create beautiful CSS is well documented in the files themselves. So, if you are really interested, you'll have to open a `.less`-file and read what's there.
 
 ## Credits
 
