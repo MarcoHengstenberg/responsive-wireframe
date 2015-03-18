@@ -4,9 +4,14 @@
 	I'm going with Lobster (a display font) for the "Logo" and
 	Lato is for all body copy.
 
-	I'd normally go with Raleway but let's try to be a bit conservative
-	at least once in our lives. Shall we? We shall!
+	I'd normally go with Raleway (I love that font) but let's try
+  to be a bit conservative at least once in our lives.
+
+  Of course it's completely up to you what fonts you are going
+  to use for your project.
 */
+
+// First I'm going to import the fonts from Google
 @font-face {
   font-family: 'Lobster Two';
   font-style: italic;
@@ -51,9 +56,10 @@
 .lato(@font-family: "Lato", @font-weight: 400, @font-style: normal) {
 	font-family: @font-family, "Helvetica Neue", Calibri, "Droid Sans", Helvetica, Arial, sans-serif;
 	font-style: @font-style;
-	font-weight: @font-weight; 
+	font-weight: @font-weight;
 }
 
+// See what I did there?
 .lato-bold() {
 	.lato('Lato', 700);
 }

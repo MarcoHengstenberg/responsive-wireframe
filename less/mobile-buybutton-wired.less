@@ -1,0 +1,55 @@
+/** mobile-buybutton-wired.less **/
+
+.buy-button {
+  text-align: center;
+  font-size: @gold;
+
+  color: @corpred;
+
+  span {
+    position: relative;
+    font-size: @half;
+
+    color: @silver;
+
+    &::before {
+      position: absolute;
+      content: " ";
+      left: 0;
+      right: 0;
+      top: 50%;
+
+      border-bottom: .1em solid @silver;
+
+      transform: rotate(-30deg);
+    }
+  }
+
+  a {
+    font-size: @half;
+
+    display: inline-block;
+    border: 0;
+    padding: @half;
+
+    background: @corpred;
+    color: @bg;
+    border-radius: @half / 2;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: @corpred + #666;
+    }
+  }
+}
+
+.secondary-product .buy-button a {
+  background: @link;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: @link-hover;
+  }
+}

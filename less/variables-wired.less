@@ -37,8 +37,29 @@
 /*
 	There are values I will use again and again and again.
 	All other values for margins and paddings can be calculated.
+
+  Of course you could add a lot of your own stuff here.
 */
 @one: 1em;
 @half: .618em;
 @gold: 1.618em;
 @double: 2.618em;
+
+/*
+  This is a new thing to me and I'll see if it works out for me.
+  I'm going to replace the initial comment on all my media-query
+  focussed less-files and the value inside the query itself.
+
+  So, for example I could do this:
+
+  @first-breakpoint: 5em;
+
+  And later on write:
+
+  @media whatever and (min-width: @first-breakpoint)
+
+  That way I can always go to my variables and alter the values here
+  instead of going to those files and change the values there.
+
+  Might be cool, dunno. Will see.
+*/

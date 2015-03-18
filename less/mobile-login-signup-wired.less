@@ -28,11 +28,13 @@ form h3 {
 
 .signup:target,
 .login:target {
+  box-sizing: border-box;
+
   display: block;
   position: relative;
 
   height: 100%;
-  padding: @gold 0;
+  padding: @gold @one;
   margin: @double 0;
 
   border-bottom: .08em solid @silver;
@@ -40,7 +42,7 @@ form h3 {
   .closing {
     position: absolute;
     top: 1.25em;
-    right: 0;
+    right: @one;
 
     a {
       background: url(../images/svg/x-icon.svg) no-repeat 50% 50%, @link;

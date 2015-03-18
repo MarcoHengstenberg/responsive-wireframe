@@ -73,7 +73,7 @@
 
 	<form class="signup cf" id="signup-form">
 		<h3><label for="signup-email">Create an account</label></h3>
-		<input class="text-input" type="email" placeholder="Your email" id="signup-email" />
+		<input class="text-input" type="email" placeholder="Your email" id="signup-email" required />
 		<input class="text-input" type="password" placeholder="Your password" name="pw" id="pw" />
 		<input class="text-input" type="password" placeholder="Confirm your password" name="pw2" id="pw2" oninput="check(this)" />
 		<button type="submit">Sign up</button>
@@ -83,8 +83,8 @@
 
 	<form class="login cf" id="login-form">
 		<h3><label for="login-email">Login</label></h3>
-		<input class="text-input" type="email" placeholder="Your email" id="login-email" />
-		<input class="text-input" type="password" placeholder="Your password" />
+		<input class="text-input" type="email" placeholder="Your email" id="login-email" required />
+		<input class="text-input" type="password" placeholder="Your password" required />
 		<button type="submit">Login</button>
 		<p>You <a href="#">forgot the password</a> or are a <a href="#signup-form">new user?</a></p>
 		<p class="closing"><a class="hide-text" href="#top">Close</a></p>
@@ -152,43 +152,52 @@
 			<article class="secondary-article secondary-product">
 				<h3>Secondary featured article or product</h3>
 
+				<figure class="secondary featured-image">
+					<a href="#"><img src="images/secondary-product.png" alt="Secondary product" /></a>
+					<figcaption><a href="#">Secondary product</a> image caption.</figcaption>
+				</figure>
+
 				<p>Another article or product. This is the second most important one.</p>
 				<p>It also has a short description or excerpt and an image to it.</p>
 
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
+				<div class="buy-button">
+					<p class="price" title="Current price">1216.99€ <span title="Original price">2020.99€</span></p>
+					<a href="#">Buy it now</a>
 				</div>
-
-				<p class="price">20$ <span>26$</span></p>
 			</article>
 
 			<article class="secondary-article secondary-product">
 				<h3>Secondary featured article or product</h3>
 
-				<p>May be you have more than one second most important <a href="#">product</a>.</p>
+				<figure class="secondary featured-image">
+					<a href="#"><img src="images/secondary-product.png" alt="Secondary product" /></a>
+					<figcaption><a href="#">Secondary product</a> image caption.</figcaption>
+				</figure>
+
+				<p>Another article or product. This is the second most important one.</p>
 				<p>It also has a short description or excerpt and an image to it.</p>
 
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
+				<div class="buy-button">
+					<p class="price" title="Current price">1216.99€ <span title="Original price">2020.99€</span></p>
+					<a href="#">Buy it now</a>
 				</div>
-
-				<p class="price">20$ <span>26$</span></p>
 			</article>
 
 			<article class="secondary-article secondary-product">
 				<h3>Secondary featured article or product</h3>
 
-				<p>Third second most important <a href="#">products</a> to display.</p>
+				<figure class="secondary featured-image">
+					<a href="#"><img src="images/secondary-product.png" alt="Secondary product" /></a>
+					<figcaption><a href="#">Secondary product</a> image caption.</figcaption>
+				</figure>
+
+				<p>Another article or product. This is the second most important one.</p>
 				<p>It also has a short description or excerpt and an image to it.</p>
 
-				<div class="secondary featured-image">
-					<a href="#"><img src="images/secondary-featured.png" alt="Secondary product" /></a>
-					<p><a href="#">Secondary product</a> image caption.</p>
+				<div class="buy-button">
+					<p class="price" title="Current price">1216.99€ <span title="Original price">2020.99€</span></p>
+					<a href="#">Buy it now</a>
 				</div>
-
-				<p class="price">20$ <span>26$</span></p>
 			</article>
 
 			<section class="popular-products">

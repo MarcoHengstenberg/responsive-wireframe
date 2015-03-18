@@ -30,6 +30,26 @@
 /*
 	There are values I will use again and again and again.
 	All other values for margins and paddings can be calculated.
+
+  Of course you could add a lot of your own stuff here.
+*/
+/*
+  This is a new thing to me and I'll see if it works out for me.
+  I'm going to replace the initial comment on all my media-query
+  focussed less-files and the value inside the query itself.
+
+  So, for example I could do this:
+
+  @first-breakpoint: 5em;
+
+  And later on write:
+
+  @media whatever and (min-width: @first-breakpoint)
+
+  That way I can always go to my variables and alter the values here
+  instead of going to those files and change the values there.
+
+  Might be cool, dunno. Will see.
 */
 /*
 	A more considered reset; more of a restart...
@@ -124,7 +144,6 @@ body {
     to the body. Then I want it to be centered.
   */
   margin: 0 auto;
-  padding: 0 1em;
 }
 /*
 	HTML5 display definitions
@@ -305,12 +324,15 @@ input {
 */
 input[type="checkbox"],
 input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
   padding: 0;
   /* 2 */
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  /* 1 */
 }
 /*
 	Remove inner padding and search cancel button in Safari and Chrome on OS X.
@@ -349,6 +371,11 @@ input[type="text"]:active {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+input:invalid {
+  border-color: #a40109;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 button[type="submit"] {
   color: #fafdfa;
   background: #0d9ff1;
@@ -360,8 +387,13 @@ button[type="submit"]:focus {
   background: #1eb0ff;
   text-shadow: 0 0 1em rgba(255, 255, 255, 0.65);
 }
+button[type="submit"]:active {
+  background-color: #0d9ff1;
+  -webkit-box-shadow: inset -0.125em 0 0.125em rgba(0, 0, 0, 0.25), inset 0.125em 0 0.125em rgba(0, 0, 0, 0.25);
+  box-shadow: inset -0.125em 0 0.125em rgba(0, 0, 0, 0.25), inset 0.125em 0 0.125em rgba(0, 0, 0, 0.25);
+}
 /*
-	Remove default vertical scrollbar in IE 8/9.
+	Remove the default vertical scrollbar in IE 8/9.
 	Make textareas only resizable vertically.
 */
 textarea {
@@ -410,8 +442,11 @@ canvas {
 	I'm going with Lobster (a display font) for the "Logo" and
 	Lato is for all body copy.
 
-	I'd normally go with Raleway but let's try to be a bit conservative
-	at least once in our lives. Shall we? We shall!
+	I'd normally go with Raleway (I love that font) but let's try
+  to be a bit conservative at least once in our lives.
+
+  Of course it's completely up to you what fonts you are going
+  to use for your project.
 */
 @font-face {
   font-family: 'Lobster Two';
@@ -485,7 +520,9 @@ em strong {
   font-weight: 700;
 }
 /*
-	When I want to replace text with an image I do it the Kellum way.
+	When I want to replace text with an image I do it "The Kellum Way".
+  http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
 	Do not forget to set a height and width on elements with that class.
 */
 .hide-text {
@@ -506,7 +543,7 @@ em strong {
 .logo {
   font-size: 3em;
   line-height: 1.2;
-  padding: 0.25em 0;
+  padding: 0.25em 0 0 0.33333333em;
 }
 .logo a {
   color: #d7343c;
@@ -657,10 +694,13 @@ form h3 {
 }
 .signup:target,
 .login:target {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   position: relative;
   height: 100%;
-  padding: 1.618em 0;
+  padding: 1.618em 1em;
   margin: 2.618em 0;
   border-bottom: 0.08em solid #c0c0c0;
 }
@@ -668,7 +708,7 @@ form h3 {
 .login:target .closing {
   position: absolute;
   top: 1.25em;
-  right: 0;
+  right: 1em;
 }
 .signup:target .closing a,
 .login:target .closing a {
@@ -690,6 +730,7 @@ form button + p {
 /** mobile-header-wired.less **/
 header {
   margin-top: 1.618em;
+  padding: 0 1em;
   border-bottom: 0.08em solid #c0c0c0;
 }
 header p {
@@ -711,7 +752,7 @@ header p a:active {
 /** mobile-search-wired.less **/
 .search {
   margin: 1.618em 0 0;
-  padding-bottom: 1.618em;
+  padding: 0 1em 1.618em;
 }
 .search .long {
   display: none;
@@ -772,6 +813,7 @@ input[type="search"] {
 }
 .categories-nav {
   position: relative;
+  padding: 0 1em;
 }
 .categories-nav ul {
   position: relative;
@@ -837,7 +879,7 @@ input[type="search"] {
 /** mobile-breadcrumb-wired.less **/
 .breadcrumb {
   padding: 0.618em 0;
-  margin: 1.618em 0 0.618em;
+  margin: 1.618em 1em 0.618em;
   border-top: 0.08em solid #c0c0c0;
   border-bottom: 0.08em solid #c0c0c0;
 }
@@ -853,11 +895,13 @@ input[type="search"] {
 /** mobile-maincontent-wired.less **/
 .main {
   margin: 1.618em 0;
+  padding: 0 1em;
 }
 /** mobile-featuredproduct-wired.less **/
 .featured-product {
   border: 0.08em solid #a40109;
   padding: 1em;
+  margin-bottom: 2.618em;
 }
 .featured-product h2 a {
   font-size: 1.618em;
@@ -865,21 +909,40 @@ input[type="search"] {
   border: 0;
   color: #a40109;
 }
+.featured-product h2 a:hover,
+.featured-product h2 a:focus,
+.featured-product h2 a:active {
+  color: #ff676f;
+}
 .featured-product p {
   line-height: 1.4;
   margin: 0.618em 0;
 }
-.featured-product .buy-button {
+.featured-product img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0.08em solid #fafdfa;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.featured-product img:hover,
+.featured-product img:focus,
+.featured-product img:active {
+  border: 0.08em solid #0d9ff1;
+}
+/** mobile-buybutton-wired.less **/
+.buy-button {
   text-align: center;
   font-size: 1.618em;
   color: #a40109;
 }
-.featured-product .buy-button span {
+.buy-button span {
   position: relative;
   font-size: 0.618em;
   color: #c0c0c0;
 }
-.featured-product .buy-button span::before {
+.buy-button span::before {
   position: absolute;
   content: " ";
   left: 0;
@@ -890,7 +953,7 @@ input[type="search"] {
   -ms-transform: rotate(-30deg);
   transform: rotate(-30deg);
 }
-.featured-product .buy-button a {
+.buy-button a {
   font-size: 0.618em;
   display: inline-block;
   border: 0;
@@ -898,4 +961,23 @@ input[type="search"] {
   background: #a40109;
   color: #fafdfa;
   border-radius: 0.309em;
+}
+.buy-button a:hover,
+.buy-button a:focus,
+.buy-button a:active {
+  background: #ff676f;
+}
+.secondary-product .buy-button a {
+  background: #0d9ff1;
+}
+.secondary-product .buy-button a:hover,
+.secondary-product .buy-button a:focus,
+.secondary-product .buy-button a:active {
+  background: #0c4d71;
+}
+/** mobile-secondary-product-wired.less **/
+.secondary-product {
+  border: 0.08em solid #c0c0c0;
+  padding: 1em;
+  margin-bottom: 1.618em;
 }

@@ -48,9 +48,6 @@ body {
     to the body. Then I want it to be centered.
   */
   margin: 0 auto;
-
-  // Create a little space for smartphone scrollbars
-  padding: 0 @one;
 }
 
 /*
@@ -255,11 +252,12 @@ input {
 */
 input[type="checkbox"],
 input[type="radio"] {
+  box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
+  -webkit-appearance: textfield;
 }
 
 /*
@@ -293,13 +291,21 @@ input[type="text"] {
 
 // Checking for validity
 .login input[type="email"]:valid,
+.signup input[type="email"]:valid,
+.signup input[type="password"]:valid
 /*
-  the input password for the login does not need a validation
+  the input "password" for the login does not need a validation because it
   could be confused with "Ah I typed the right password but how do they know?".
 */
-.signup input[type="email"]:valid,
-.signup input[type="password"]:valid {
+{
   border-color: #6ECE0A; // green means you're good to go
+  box-shadow: none;
+}
+
+// Oh, you did something wrong there
+input:invalid {
+  border-color: @corpred;
+
   box-shadow: none;
 }
 
@@ -316,10 +322,17 @@ button[type="submit"] {
     background: @link + #111;
     text-shadow: 0 0 @one rgba(255,255,255,0.65);
   }
+
+  &:active {
+    background-color: @link;
+    box-shadow:
+      inset -.125em 0 .125em rgba(0,0,0,0.25),
+      inset .125em 0 .125em rgba(0,0,0,0.25);
+  }
 }
 
 /*
-	Remove default vertical scrollbar in IE 8/9.
+	Remove the default vertical scrollbar in IE 8/9.
 	Make textareas only resizable vertically.
 */
 textarea {

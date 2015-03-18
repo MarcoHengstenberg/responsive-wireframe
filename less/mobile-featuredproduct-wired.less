@@ -3,6 +3,8 @@
   border: .08em solid @corpred;
   padding: @one;
 
+  margin-bottom: @double;
+
   h2 a {
     font-size: @gold;
 
@@ -10,6 +12,12 @@
     border: 0;
 
     color: @corpred;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: @corpred + #666;
+    }
   }
 
   p {
@@ -17,41 +25,16 @@
     margin: @half 0;
   }
 
-  .buy-button {
-    text-align: center;
-    font-size: @gold;
+  img {
+    box-sizing: border-box;
+    border: .08em solid @bg;
 
-    color: @corpred;
+    transition: all .3s ease-out;
 
-    span {
-      position: relative;
-      font-size: @half;
-
-      color: @silver;
-
-      &::before {
-        position: absolute;
-        content: " ";
-        left: 0;
-        right: 0;
-        top: 50%;
-
-        border-bottom: .1em solid @silver;
-
-        transform: rotate(-30deg);
-      }
-    }
-
-    a {
-      font-size: @half;
-
-      display: inline-block;
-      border: 0;
-      padding: @half;
-
-      background: @corpred;
-      color: @bg;
-      border-radius: @half / 2;
+    &:hover,
+    &:focus,
+    &:active {
+      border: .08em solid @link;
     }
   }
 }
